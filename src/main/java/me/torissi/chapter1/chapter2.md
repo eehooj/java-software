@@ -97,7 +97,7 @@
 > 어떻게 적용?
 > - 입력읽기, 주어진 입력 파싱, 결과 처리, 결과 요약 리포트 분리하기
 > ```html
-> [소스 링크](src/me/torissi/chapter1/srp)
+> [소스 링크](https://github.com/torissi/java-software/tree/main/src/main/java/me/torissi/chapter1/srp)
 > ```
 > - 메인에서의 파싱 로직을 다른 클래스와 메소드에 위임
 > - 새 요구 사항이 들어오면 BankStatementCSVPaser를 캡슐화 하여 재사용 로직 구현
@@ -117,7 +117,7 @@
 > 3. 높은 응집도를 갖는 것이 목표
 > 4. 클래스, 패키지, 메소드 등의 동작이 얼마나 관련되어 있는가
 > ```html
-> [소스 링크](src/me/torissi/chapter1/cohesion)
+> [소스 링크](https://github.com/torissi/java-software/tree/main/src/main/java/me/torissi/chapter1/cohesion)
 > ```
 > 클래스 수준의 응집도
 > - 실무에서는 기능, 정보, 유틸리티, 논리, 순차, 시간으로 그룹화
@@ -165,7 +165,7 @@
 > 5. 결합도를 줄이기 위해서는 인터페이스와 구현을 분리하는 것이 좋음
 >   * 코드의 다양한 컴포넌트가 내부와 세부 구현에 의존하지 않아야함
 > ```html
-> [소스 링크](src/me/torissi/chapter1/cohesion)
+> [소스 링크](https://github.com/torissi/java-software/tree/main/src/main/java/me/torissi/chapter1/coupling)
 > ```
 > 질문......
 > > 인터페이스화를 한다는 것이 애매하게 이해됨 <br/>
@@ -204,32 +204,4 @@
 > 4. 커버리지는 테스트 품질과는 관련이 없음
 > 5. 분기 커버리지를 사용하는 것이 좋음
 >   * 구문 커버리지는 if, while, for 등을 한 구문으로 취급하기 때문에
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
