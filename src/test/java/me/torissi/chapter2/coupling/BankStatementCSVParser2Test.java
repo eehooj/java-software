@@ -1,6 +1,6 @@
-package me.torissi.chapter1.coupling;
+package me.torissi.chapter2.coupling;
 
-import me.torissi.chapter1.srp.BankTransaction;
+import me.torissi.chapter2.srp.BankTransaction;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

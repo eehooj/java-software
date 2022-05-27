@@ -1,4 +1,4 @@
-package me.torissi.chapter1.coupling;
+package me.torissi.chapter2.coupling;
 
 import java.io.IOException;
 

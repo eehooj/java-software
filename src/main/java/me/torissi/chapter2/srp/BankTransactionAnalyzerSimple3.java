@@ -1,4 +1,4 @@
-package me.torissi.chapter1.srp;
+package me.torissi.chapter2.srp;
 
 import java.io.IOException;
 import java.nio.file.Files;

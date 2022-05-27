@@ -1,8 +1,8 @@
-package me.torissi.chapter1.coupling;
+package me.torissi.chapter2.cohesion;
 
 
-import me.torissi.chapter1.cohesion.BankStatementProcessor;
-import me.torissi.chapter1.srp.BankTransaction;
+import me.torissi.chapter2.srp.BankStatementCSVParser;
+import me.torissi.chapter2.srp.BankTransaction;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -11,14 +11,16 @@ import java.nio.file.Paths;
 import java.time.Month;
 import java.util.List;
 
-public class BankTransactionAnalyzer2 {
+public class BankTransactionAnalyzer {
 
     private static final String RESOURCES = "src/main/resources";
+    private static final BankStatementCSVParser bankStatementParser = new BankStatementCSVParser();
 
-    public void analyze(final String fileName, final BankStatementParser bankStatementParser) throws IOException {
+    public static void main(String[] args) throws IOException {
+        final String fileName = args[0];
         final Path path = Paths.get(RESOURCES + fileName);
         final List<String> lines = Files.readAllLines(path);
-        final List<BankTransaction> bankTransactions = bankStatementParser.parseLinesFrom(lines);
+        final List<BankTransaction> bankTransactions = bankStatementParser.parseLinesFromCSV(lines);
         final BankStatementProcessor bankStatementProcessor = new BankStatementProcessor(bankTransactions);
 
         collectSummary(bankStatementProcessor);

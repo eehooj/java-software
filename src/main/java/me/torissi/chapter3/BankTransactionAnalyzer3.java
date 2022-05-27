@@ -1,8 +1,8 @@
-package me.torissi.chapter1.cohesion;
+package me.torissi.chapter3;
 
 
-import me.torissi.chapter1.srp.BankStatementCSVParser;
-import me.torissi.chapter1.srp.BankTransaction;
+import me.torissi.chapter2.coupling.BankStatementParser;
+import me.torissi.chapter2.srp.BankTransaction;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -11,16 +11,14 @@ import java.nio.file.Paths;
 import java.time.Month;
 import java.util.List;
 
-public class BankTransactionAnalyzer {
+public class BankTransactionAnalyzer3 {
 
     private static final String RESOURCES = "src/main/resources";
-    private static final BankStatementCSVParser bankStatementParser = new BankStatementCSVParser();
 
-    public static void main(String[] args) throws IOException {
-        final String fileName = args[0];
+    public void analyze(final String fileName, final BankStatementParser bankStatementParser) throws IOException {
         final Path path = Paths.get(RESOURCES + fileName);
         final List<String> lines = Files.readAllLines(path);
-        final List<BankTransaction> bankTransactions = bankStatementParser.parseLinesFromCSV(lines);
+        final List<BankTransaction> bankTransactions = bankStatementParser.parseLinesFrom(lines);
         final BankStatementProcessor bankStatementProcessor = new BankStatementProcessor(bankTransactions);
 
         collectSummary(bankStatementProcessor);
@@ -31,6 +29,11 @@ public class BankTransactionAnalyzer {
         System.out.println("1월 달 총 사용 금액은 " + bankStatementProcessor.calulateTotalInMonth(Month.JANUARY));
         System.out.println("2월 달 총 사용 금액은 " + bankStatementProcessor.calulateTotalInMonth(Month.FEBRUARY));
         System.out.println("총 월급 받은 금액은 " + bankStatementProcessor.calulateTotalForCategory("Salary"));
+        /*List<BankTransaction> transactions
+                = bankStatementProcessor.findTransactions(new BankTransactionIsInFebruaryAndExpensive());*/
+        List<BankTransaction> transactions
+                = bankStatementProcessor.findTransactions(
+                        bankTransaction -> bankTransaction.getDate().getMonth() == Month.FEBRUARY
+                                && bankTransaction.getAmount() >= 1000);
     }
-
 }

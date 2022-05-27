@@ -1,7 +1,7 @@
-package me.torissi.chapter1.cohesion;
+package me.torissi.chapter2.cohesion;
 
 
-import me.torissi.chapter1.srp.BankTransaction;
+import me.torissi.chapter2.srp.BankTransaction;
 
 import java.time.Month;
 import java.util.List;
