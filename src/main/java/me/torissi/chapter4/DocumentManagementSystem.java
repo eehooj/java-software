@@ -15,7 +15,7 @@ public class DocumentManagementSystem {
 
     private final List<Document> documents = new ArrayList<>();
     private final Map<String, Importer> extensionToImporter = new HashMap<>();
-    private final List<Document> documentsView = unmodifiableList(documents);
+    private final List<Document> documentsView = unmodifiableList(documents); // 추가/삭제가 금지된 리스트 - read only
 
     public DocumentManagementSystem() {
         extensionToImporter.put("letter", new LetterImporter());
