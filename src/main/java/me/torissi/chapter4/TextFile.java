@@ -33,7 +33,7 @@ public class TextFile {
         for (lineNumber = start; lineNumber < lines.size(); lineNumber++) {
             final String line = lines.get(lineNumber);
 
-            if (isEnd.test(line)) {
+            if (isEnd.test(line)) { // 전달된 argument의 predicate가 true이면 break;
                 break;
             }
 
