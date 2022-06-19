@@ -7,7 +7,7 @@ import static org.mockito.Mockito.*;
 
 class InspectorTest {
 
-    @Test
+/*    @Test
     void shouldHaveNoRulesInitially() {
         final BusinessRuleEngine businessRuleEngine = new BusinessRuleEngine();
 
@@ -33,5 +33,5 @@ class InspectorTest {
         businessRuleEngine.run();
 
         verify(mockAction, atLeastOnce());
-    }
+    }*/
 }
