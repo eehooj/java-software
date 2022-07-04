@@ -36,4 +36,10 @@ public class Twootr {
     // end::optional_onLogon[]*/
     return null;
   }
+
+  /*FollowStatus onFollow(final User follow, final String userIdToFollow) {
+    return userRepository.get(userIdToFollow)
+        .map(userToFollow -> userRepository.follow(follow, userToFollow))
+        .orElse(INVALID_USER);
+  }*/
 }

@@ -16,4 +16,10 @@ public class SenderEndPoint {
       this.user = user;
       this.twootr = twootr;
   }
+
+  public FollowStatus onFollow (final String userIdToFollow) {
+    Objects.requireNonNull(userIdToFollow, "userIdToFollow");
+
+    return null;
+  }
 }
